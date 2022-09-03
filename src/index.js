@@ -2,12 +2,13 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
+const route = require('./routes');
 
 const app = express();
 const port = 3000;
 
 // HTTP logger
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 
 // Static link
 app.use(express.static(path.join(__dirname, 'public')))
@@ -25,12 +26,7 @@ app.engine('hbs', handlebars.engine({
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
-// Routing
-app.get('/', (req, res) => {
-    res.render('home');
-});
-app.get('/news', (req, res) => {
-    res.render('news');
-});
+// Routes init
+route(app);
 
 app.listen(port, () => console.log(`[Console log] app listening at http://localhost:${port}`));

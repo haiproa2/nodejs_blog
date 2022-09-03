@@ -25,9 +25,12 @@ app.engine('hbs', handlebars.engine({
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
-//
+// Routing
 app.get('/', (req, res) => {
     res.render('home');
+});
+app.get('/news', (req, res) => {
+    res.render('news');
 });
 
 app.listen(port, () => console.log(`[Console log] app listening at http://localhost:${port}`));

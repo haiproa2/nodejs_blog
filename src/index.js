@@ -9,6 +9,9 @@ const port = 3000;
 // HTTP logger
 app.use(morgan('combined'));
 
+// Static link
+app.use(express.static(path.join(__dirname, 'public')))
+
 // Template engine
 app.engine('hbs', handlebars.engine({
     extname: '.hbs',

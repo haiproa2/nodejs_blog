@@ -1,0 +1,23 @@
+@import 'variables';
+
+header{
+    font-size: 20px;
+    color: $main_color;
+    background: $main_bg;
+    padding: $main_padding;
+}
+
+.container{
+    padding: $main_padding;
+}
+.container:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+footer{
+    color: $main_color;
+    background: $main_bg;
+    padding: $main_padding;
+}

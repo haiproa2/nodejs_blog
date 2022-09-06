@@ -21,14 +21,14 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.engine('hbs', handlebars.engine({
     extname: '.hbs',
     defaultLayout: 'main', 
-    layoutsDir: path.join(__dirname, 'resources/views/layouts'),
+    layoutsDir: path.join(__dirname, 'resources', 'views', 'layouts'),
     partialsDir  : [
         //  path to your partials
-        path.join(__dirname, 'resources/views/partials'),
+        path.join(__dirname, 'resources', 'views', 'partials'),
     ]
 }));
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resources/views'));
+app.set('views', path.join(__dirname, 'resources', 'views'));
 
 // Routes init
 route(app);

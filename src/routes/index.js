@@ -8,8 +8,8 @@ function route(app){
     app.use('/news', newsRouter);
 
     // Site router
-    app.use('/search', siteController.search);
-    app.use('/', siteController.index);
+    app.get('/search', siteController.search);
+    app.get('/', siteController.index);
 }
 
 module.exports = route;
